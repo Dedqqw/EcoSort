@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoSort – Start</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: radial-gradient(circle at top, #222, #000);
+            font-family: "Segoe UI", sans-serif;
+            color: #b6ff9c;
+            overflow: hidden;
+        }
+
+        /* Layout */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 2fr; /* wider left panel */
+            height: 100%;
+            align-items: center;
+        }
+
+        /* LEFT SIDE – ROBOT */
+        .sidebar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .robot-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .robot-container img {
+            max-height: 500px; /* same as detection window */
+            max-width: 100%;
+            filter: drop-shadow(0 0 25px rgba(154, 255, 122, 0.35));
+        }
+
+        /* RIGHT SIDE */
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Glow animation */
+        @keyframes glowPulse {
+            0% {
+                text-shadow: 0 0 6px rgba(154, 255, 122, 0.4),
+                             0 0 12px rgba(154, 255, 122, 0.2);
+                opacity: 0.7;
+            }
+            50% {
+                text-shadow: 0 0 18px rgba(154, 255, 122, 0.9),
+                             0 0 36px rgba(154, 255, 122, 0.6);
+                opacity: 1;
+            }
+            100% {
+                text-shadow: 0 0 6px rgba(154, 255, 122, 0.4),
+                             0 0 12px rgba(154, 255, 122, 0.2);
+                opacity: 0.7;
+            }
+        }
+
+        .instruction {
+            font-size: 34px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            text-align: center;
+            animation: glowPulse 2.2s infinite ease-in-out;
+        }
+
+        .sub-instruction {
+            font-size: 20px;
+            margin-bottom: 40px;
+            text-align: center;
+            opacity: 0.7;
+        }
+
+        .detection-window {
+            width: 620px;
+            height: 360px;
+            border: 4px solid #9aff7a;
+            border-radius: 32px;
+            background-color: #2a2a2a;
+            box-shadow: 0 0 30px rgba(154, 255, 122, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .detection-window span {
+            font-size: 22px;
+            animation: glowPulse 3s infinite ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    
+<script>
+        async function checkFile() {
+            const url = "_data.txt?nocache=" + Math.random(); // force refresh
+            const response = await fetch(url, { cache: "no-store" });
+            const text = (await response.text()).trim();
+
+            //if (text === "pmd") location.href = "pmd.html";
+            //if (text === "organic") location.href = "organic.html";
+            //if (text === "paper") location.href = "paper.html";
+            
+            // pwd sort 
+            if (text === "fles") location.href = "fles.html";
+            if (text === "blik") location.href = "blik.html";
+            if (text === "karton fles") location.href = "karton fles.html";
+
+            // organic sort 
+            if (text === "apple") location.href = "appel.html";
+
+            // paper karton sort 
+            if (text === "cardboard") location.href = "cardboard.html";
+            if (text === "paperbag") location.href = "paperbag.html";
+        }
+
+        setInterval(checkFile, 500);
+        checkFile();
+    </script>
+
+<div class="container">
+
+    <!-- LEFT: BIG ROBOT -->
+    <div class="sidebar">
+        <div class="robot-container">
+            <img src="foto/ecosortbotnobg.png" alt="EcoSort Robot">
+        </div>
+    </div>
+
+    <!-- RIGHT: UI -->
+    <div class="main">
+        <div class="instruction">
+            Drop an item to start sorting
+        </div>
+
+        <div class="sub-instruction">
+            Place your item inside the detection area
+        </div>
+
+        <div class="detection-window">
+            <span>Waiting for item…</span>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

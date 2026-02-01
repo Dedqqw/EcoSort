@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #1e1e1e;
+        }
+        h1{
+            text-align: center;
+            
+        }
+        p{
+            text-align: center;
+        }
+        button{
+            background-color: #97e17e;
+            display: block;
+            cursor: pointer;
+           
+            padding:15px 32px;
+            
+            
+        }
+    </style>
+<script>
+        let resetTimer;
+
+
+        function startResetTimer() {
+        resetTimer = setTimeout(() => {
+        window.location.href = "1start-page.html";
+        }, 5000);
+        }
+
+
+        function resetTimerNow() {
+        clearTimeout(resetTimer);
+        }
+
+
+        window.onload = startResetTimer;
+</script>
+</head>
+<body>
+    <h1 style="color: aliceblue;">Thank you for your support</h1>
+    <p style="color: aliceblue;"><button onclick="location.href='start-page.html'">
+        click to start again
+    </button></p>
+</body>
+</html>
