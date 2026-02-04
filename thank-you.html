@@ -3,51 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>EcoSort – Thank You</title>
+
     <style>
-        body{
-            background-color: #1e1e1e;
+        body {
+            margin: 0;
+            height: 100vh;
+            background: radial-gradient(circle at center, #1c2a1c, #000);
+            font-family: "Segoe UI", sans-serif;
+            color: #b6ff9c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
-        h1{
+
+        .container {
             text-align: center;
-            
+            animation: fadeIn 1s ease-out;
         }
-        p{
-            text-align: center;
+
+        .thankyou {
+            font-size: 64px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            animation: softGlow 3s infinite ease-in-out;
         }
-        button{
-            background-color: #97e17e;
-            display: block;
-            cursor: pointer;
-           
-            padding:15px 32px;
-            
-            
+
+        .message {
+            font-size: 24px;
+            opacity: 0.85;
+            margin-bottom: 50px;
+        }
+
+        .leaf {
+            font-size: 80px;
+            margin-bottom: 40px;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .restart-btn {
+            display: inline-block;
+            padding: 18px 40px;
+            font-size: 20px;
+            color: #9aff7a;
+            text-decoration: none;
+            border: 3px solid #9aff7a;
+            border-radius: 40px;
+            transition: all 0.25s ease;
+            box-shadow: 0 0 18px rgba(154, 255, 122, 0.3);
+        }
+
+        .restart-btn:hover {
+            background-color: rgba(154, 255, 122, 0.12);
+            box-shadow: 0 0 28px rgba(154, 255, 122, 0.8);
+            transform: scale(1.05);
+        }
+
+        /* Animations */
+        @keyframes softGlow {
+            0% {
+                text-shadow: 0 0 10px rgba(154,255,122,0.3);
+            }
+            50% {
+                text-shadow: 0 0 30px rgba(154,255,122,0.8);
+            }
+            100% {
+                text-shadow: 0 0 10px rgba(154,255,122,0.3);
+            }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.96);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
     </style>
-<script>
-        let resetTimer;
 
-
-        function startResetTimer() {
-        resetTimer = setTimeout(() => {
-        window.location.href = "1start-page.html";
-        }, 5000);
-        }
-
-
-        function resetTimerNow() {
-        clearTimeout(resetTimer);
-        }
-
-
-        window.onload = startResetTimer;
-</script>
+    <script>
+        // Auto return after 6 seconds
+        setTimeout(() => {
+            window.location.href = "index.html";
+        }, 6000);
+    </script>
 </head>
+
 <body>
-    <h1 style="color: aliceblue;">Thank you for your support</h1>
-    <p style="color: aliceblue;"><button onclick="location.href='start-page.html'">
-        click to start again
-    </button></p>
+
+<div class="container">
+    <div class="leaf">🌱</div>
+    <div class="thankyou">Thank You!</div>
+    <div class="message">
+        Thanks for helping keep our planet clean.<br>
+        EcoSort appreciates you.
+    </div>
+
+    <a href="index.html" class="restart-btn">
+        Sort another item
+    </a>
+</div>
+
 </body>
 </html>
