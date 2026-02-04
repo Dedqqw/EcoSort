@@ -3,15 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>correct</title>
-   <link rel="stylesheet" href="https://pyscript.net/releases/2025.11.1/core.css" />
-    <script type="module" src="https://pyscript.net/releases/2025.11.1/core.js"></script>
+    <title>EcoSort – Correct</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: radial-gradient(circle at center, #1e2a1e, #000);
+            font-family: "Segoe UI", sans-serif;
+            color: #9aff7a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        /* Main success text */
+        .success {
+            font-size: 72px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            animation: glowPulse 2s infinite ease-in-out;
+        }
+
+        .message {
+            font-size: 26px;
+            opacity: 0.85;
+            margin-bottom: 50px;
+        }
+
+        /* Button */
+        .restart-btn {
+            display: inline-block;
+            padding: 18px 36px;
+            font-size: 20px;
+            color: #9aff7a;
+            text-decoration: none;
+            border: 3px solid #9aff7a;
+            border-radius: 40px;
+            transition: all 0.25s ease;
+            box-shadow: 0 0 15px rgba(154, 255, 122, 0.3);
+        }
+
+        .restart-btn:hover {
+            background-color: rgba(154, 255, 122, 0.1);
+            box-shadow: 0 0 25px rgba(154, 255, 122, 0.7);
+            transform: scale(1.05);
+        }
+
+        /* Animations */
+        @keyframes glowPulse {
+            0% {
+                text-shadow: 0 0 10px rgba(154,255,122,0.4),
+                             0 0 20px rgba(154,255,122,0.2);
+            }
+            50% {
+                text-shadow: 0 0 30px rgba(154,255,122,1),
+                             0 0 60px rgba(154,255,122,0.8);
+            }
+            100% {
+                text-shadow: 0 0 10px rgba(154,255,122,0.4),
+                             0 0 20px rgba(154,255,122,0.2);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+
+    <script>
+        // Auto return to start page after 5 seconds
+        setTimeout(() => {
+            window.location.href = "index.html";
+        }, 10000);
+    </script>
 </head>
+
 <body>
-    <h1>nice to hear it was correct!!</h1>
-    <p><button onclick="location.href='start-page.html'">
-        click here to start again
-    </button></p>
-    <py-script>print("hello world")</py-script>
+
+<div class="container">
+    <div class="success">✔ CORRECT</div>
+    <div class="message">
+        Nice to hear — that was sorted correctly!
+    </div>
+
+    <a href="index.html" class="restart-btn">
+        Start again
+    </a>
+</div>
+
 </body>
 </html>
