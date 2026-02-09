@@ -17,7 +17,9 @@ void setup() {
   pinMode(A1, INPUT);
   pinMode(A2, INPUT);
   pinMode(A3, INPUT);
+  
   Serial.begin(9600);
+  
   baseservo.attach(9);
   rolservo.attach(3);
   secondservo.attach(2);
@@ -28,10 +30,13 @@ void loop() {
   // put your main code here, to run repeatedly:
   pmd = analogRead(A0);
   Serial.println(pmd);
+  
   plastic = analogRead(A1);
   Serial.println(plastic);
+  
   niks = analogRead(A2);
   Serial.println(niks);
+  
   karton = analogRead(A3);
   Serial.println(karton);
 
