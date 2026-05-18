@@ -50,10 +50,12 @@ void loop() {
     rolservo.write(145);
     secondservo.write(145);
     delay(2000);
-    baseservo.write(startpos);
-    delay(1000);
     rolservo.write(startpos);
     secondservo.write(startpos);
+    delay(1000);
+    baseservo.write(startpos);
+    delay(1000);
+  
     
   }
    // verander getal afhankelijk van testen
@@ -65,21 +67,13 @@ void loop() {
     rolservo.write(145);
     secondservo.write(145);
     delay(2000);
-    baseservo.write(startpos);
-    delay(1000);
-    rolservo.write(startpos);
-    secondservo.write(startpos);
-
-  }
-   // verander getal afhankelijk van testen
-  
-  if (niks >= 70){
-
-    baseservo.write(startpos);
-    delay(1000);
     rolservo.write(startpos);
     secondservo.write(startpos);
     delay(1000);
+    baseservo.write(startpos);
+    delay(1000);
+    
+
   }
 
 
@@ -92,10 +86,18 @@ void loop() {
     rolservo.write(145);
     secondservo.write(145);
     delay(2000);
+    rolservo.write(startpos);
+    secondservo.write(startpos);
+    delay(1000);
+    baseservo.write(startpos);
+    delay(1000);
+  }
+   if (niks >= 70){
+
     baseservo.write(startpos);
     delay(1000);
     rolservo.write(startpos);
     secondservo.write(startpos);
-
+    delay(1000);
   }
 }
