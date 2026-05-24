@@ -1,7 +1,7 @@
 import csv
 import time
 
-csv_file = r"C:\Users\CHAR031209\Documents\Pictoblox\DataLogger\data.csv"
+csv_file = r"|path to your pictoblox DataLogger|"
 txt_file = "_data.txt"
 
 while True:
